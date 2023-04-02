@@ -21,13 +21,13 @@ const App = () => {
     <div id="main">
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input type="text" className="name-input" value={name}onchange={(e)=>setName(e.target.value)}/>
+        <input type="text" className="name-input" value={name} onchange={(e)=>setName(e.target.value)}/>
         <br />
         <label>Time:</label>
-        <input type="text" className="time-input" value={time}onchange={e}=> setTime(e.target.value)}/>
+        <input type="text" className="time-input" value={time} onchange={(e)=> setTime(e.target.value)}/>
         <br />
         <label>Description:</label>
-        <textarea className="description-input"  value={description}onchange={e}=> setDescription(e.target.value)}/>
+        <textarea className="description-input"  value={description} onchange={(e)=> setDescription(e.target.value)}/>
         <br />
         <button type="submit">Add Appointment</button>
       </form>
