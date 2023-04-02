@@ -7,22 +7,27 @@ const App = () => {
   const [name, setName] = useState('');
   const [time, setTime] = useState('');
   const [description, setDescription] = useState('');
-
-  const handleSubmit = (e) => {
+  const dispatch =useDispatch();
+  const appointements = useSelector(state => stete.appointments);
+  const handleSubmit =(e) =>{
     e.preventDefault();
-  };
-
+    const appointment ={ name,time,discription};
+    dispatch(addAppointment(appointment));
+    setName(");
+            setTime(");
+            setDescription(");
+            };
   return (
     <div id="main">
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input type="text" className="name-input"/>
+        <input type="text" className="name-input" value={name}onchange={(e)=>setName(e.target.value)}/>
         <br />
         <label>Time:</label>
-        <input type="text" className="time-input"/>
+        <input type="text" className="time-input" value={time}onchange={e}=> setTime(e.target.value)}/>
         <br />
         <label>Description:</label>
-        <textarea className="description-input"/>
+        <textarea className="description-input"  value={description}onchange={e}=> setDescription(e.target.value)}/>
         <br />
         <button type="submit">Add Appointment</button>
       </form>
@@ -37,11 +42,15 @@ const App = () => {
         </thead>
         <tbody>
             {/* Appointment HTML */}
-            <tr>
-              <td>appointmentName</td>
-              <td>appointmentTime</td>
-              <td>appointmentDescription</td>
+                {appointments.map((appointment,index)=>
+
+            (<tr key={index}>
+                   <td>{appointment.name}</td>
+                     <td>{appointment.time}</td>
+                       <td>{appointment.description}</td>
+             
             </tr>
+))}
         </tbody>
       </table>
     </div>
