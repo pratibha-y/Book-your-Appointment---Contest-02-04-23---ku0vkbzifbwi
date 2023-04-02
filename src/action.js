@@ -1,4 +1,6 @@
 export function addAppointment() {
-    return {};
+    return {
+    type:'ADD_APPOINTMENT',
+    payload:appointment};
 }
   
